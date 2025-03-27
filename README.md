@@ -1,5 +1,30 @@
 # Anki
 
+# AI Feature
+
+1. Vocabulary Import
+
+Import Japanese vocabulary from CSV files into Anki decks. Features:
+- Automatic furigana formatting for kanji
+- Support for tags (per-note and global)
+- Updates existing notes or creates new ones
+
+Quick start:
+```bash
+# Add to ~/.zshrc
+anki-import() {
+    ./out/pyenv/bin/python tools/import_vocab.py \
+        "$HOME/Library/Application Support/Anki2/User 1/collection.anki2" \
+        "$1" "$2" "$3"
+}
+
+# Usage
+anki-import vocab.csv "Deck Name" --tags "tag1,tag2"
+```
+
+2. Matching Sample Sentences within existing vocab and update the Note  
+
+# Original Markdown Content 
 [![Build status](https://badge.buildkite.com/c9edf020a4aec976f9835e54751cc5409d843adbb66d043bd3.svg?branch=main)](https://buildkite.com/ankitects/anki-ci)
 
 This repo contains the source code for the computer version of
